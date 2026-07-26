@@ -1,4 +1,4 @@
-const player = {
+const alexPickering = {
     name: "Alexander Pickering",
     number: 90,
     position: "Defence",
@@ -8,29 +8,90 @@ const player = {
     favouriteSharkFact: "Sharks first appeared 450 million years ago!"
 };
 
-const player2 = {
+const nathanMilne = {
     name: "Nathan Milne",
     number: 21,
-    position: "centre",
-    team: "whitley Bay Sharks",
+    position: "Centre",
+    team: "Whitley Bay Sharks",
     goals: 5,
     assists: 8,
-    favouriteSharkFact: "sharks have existed longer than trees"
+    favouriteSharkFact: "Sharks have existed longer than trees"
 };
 
+const abbieStephenson = {
+    name: "Abbie Stephenson",
+    number: 24,
+    position: "Left Winger",
+    team: "Whitley Bay Sharks",
+    goals: 7,
+    assists: 4,
+    favouriteSharkFact: "Some sharks can replace their teeth thousands of times"
+};
 
-console.log(`Player: ${player.name}`);
-console.log(`Number: ${player.number}`);
-console.log(`Position: ${player.position}`);
-console.log(`Team: ${player.team}`);
-console.log(`Goals: ${player.goals}`);
-console.log(`Assists: ${player.assists}`);
-console.log(`Fact: ${player.favouriteSharkFact}`);
-console.log();
-console.log(`Player: ${player2.name}`);
-console.log(`Number: ${player2.number}`);
-console.log(`Position: ${player2.position}`);
-console.log(`Team: ${player2.team}`);
-console.log(`Goals: ${player2.goals}`);
-console.log(`Assists: ${player2.assists}`);
-console.log(`Fact: ${player2.favouriteSharkFact}`);
+const roster = [
+    alexPickering,
+    nathanMilne,
+    abbieStephenson
+];
+
+
+
+function displayPlayerCard(player) {
+    console.log(`Player: ${player.name}`);
+    console.log(`Number: ${player.number}`);
+    console.log(`Position: ${player.position}`);
+    console.log(`Team: ${player.team}`);
+    console.log(`Goals: ${player.goals}`);
+    console.log(`Assists: ${player.assists}`);
+    console.log(`Fact: ${player.favouriteSharkFact}`);
+    console.log();
+}
+
+function calculateTeamGoals(roster) {
+    let totalGoals = 0;
+
+    for (const player of roster) {
+        totalGoals += player.goals;
+    }
+
+    return totalGoals;
+}
+
+function calculateTeamAssists(roster) {
+    let totalAssists = 0;
+
+    for (const player of roster) {
+        totalAssists += player.assists;
+    }
+    return totalAssists;
+}
+
+function findTopScorer(roster) {
+    let topScorer = roster[0];
+
+    for (const player of roster) {
+        if (player.goals > topScorer.goals) {
+            topScorer = player;
+
+        }
+    }
+
+    return topScorer;
+}
+
+
+
+
+
+
+roster.forEach(displayPlayerCard);
+
+const teamGoals = calculateTeamGoals(roster);
+const teamAssists = calculateTeamAssists(roster);
+const highestScorer = findTopScorer(roster);
+
+
+console.log(`Total team goals this season: ${teamGoals}`);
+console.log(`Total team assists this season ${teamAssists}`);
+console.log(`The top scorer this season is: ${highestScorer.name} with ${highestScorer.goals} goals`);
+
