@@ -5,6 +5,7 @@ const alexPickering = {
     team: "Whitley Bay Sharks",
     goals: 0,
     assists: 1,
+    penaltyMinutes: 8,
     favouriteSharkFact: "Sharks first appeared 450 million years ago!"
 };
 
@@ -15,6 +16,7 @@ const nathanMilne = {
     team: "Whitley Bay Sharks",
     goals: 5,
     assists: 8,
+    penaltyMinutes: 0,
     favouriteSharkFact: "Sharks have existed longer than trees"
 };
 
@@ -25,6 +27,7 @@ const abbieStephenson = {
     team: "Whitley Bay Sharks",
     goals: 7,
     assists: 4,
+    penaltyMinutes: 6,
     favouriteSharkFact: "Some sharks can replace their teeth thousands of times"
 };
 
@@ -35,7 +38,6 @@ const roster = [
 ];
 
 
-
 function displayPlayerCard(player) {
     console.log(`Player: ${player.name}`);
     console.log(`Number: ${player.number}`);
@@ -43,6 +45,8 @@ function displayPlayerCard(player) {
     console.log(`Team: ${player.team}`);
     console.log(`Goals: ${player.goals}`);
     console.log(`Assists: ${player.assists}`);
+    console.log(`Points: ${calculatePlayerPoints(player)}`);
+    console.log(`Penalty Minutes: ${player.penaltyMinutes}`);
     console.log(`Fact: ${player.favouriteSharkFact}`);
     console.log();
 }
@@ -79,6 +83,9 @@ function findTopScorer(roster) {
     return topScorer;
 }
 
+function calculatePlayerPoints(player) {
+    return player.goals + player.assists;
+}
 
 
 
