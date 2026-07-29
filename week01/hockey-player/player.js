@@ -1,6 +1,19 @@
 const TEAM_NAME = "Whitley Bay Sharks";
 
-const alexPickering = {
+function createPlayer(playerDetails) {
+    return {
+        name: playerDetails.name,
+        number: playerDetails.number,
+        position: playerDetails.position,
+        team: playerDetails.team,
+        goals: playerDetails.goals ?? 0,
+        assists: playerDetails.assists ?? 0,
+        penaltyMinutes: playerDetails.penaltyMinutes ?? 0,
+        favouriteSharkFact: playerDetails.favouriteSharkFact
+    };
+}
+
+const alexPickering = createPlayer({
     name: "Alexander Pickering",
     number: 90,
     position: "Defence",
@@ -9,9 +22,9 @@ const alexPickering = {
     assists: 1,
     penaltyMinutes: 8,
     favouriteSharkFact: "Sharks first appeared 450 million years ago!"
-};
+});
 
-const nathanMilne = {
+const nathanMilne = createPlayer({
     name: "Nathan Milne",
     number: 21,
     position: "Centre",
@@ -20,9 +33,9 @@ const nathanMilne = {
     assists: 8,
     penaltyMinutes: 0,
     favouriteSharkFact: "Sharks have existed longer than trees"
-};
+});
 
-const abbieStephenson = {
+const abbieStephenson = createPlayer({
     name: "Abbie Stephenson",
     number: 24,
     position: "Left Winger",
@@ -31,14 +44,22 @@ const abbieStephenson = {
     assists: 4,
     penaltyMinutes: 6,
     favouriteSharkFact: "Some sharks can replace their teeth thousands of times"
-};
+});
+
+const ChloeStephenson = createPlayer({
+    name: "Chloe Stephenson",
+    number: 12,
+    position: "Right Winger",
+    team: TEAM_NAME,
+    favouriteSharkFact: "Sharks have been around longer than dinosaurs"
+});
 
 const roster = [
     alexPickering,
     nathanMilne,
-    abbieStephenson
+    abbieStephenson,
+    ChloeStephenson
 ];
-
 
 function displayPlayerCard(player) {
     printDivider();
@@ -62,6 +83,41 @@ function displayPlayerCard(player) {
     printDivider();
     console.log();
     console.log();
+    
+}
+//function to add
+
+function updatePlayerStats(roster, number, statsToAdd) {
+    const player = findPlayerByNumber(roster, number);
+    if (player) {
+        player.goals += statsToAdd.goals;
+        player.assists += statsToAdd.assists;
+        player.penaltyMinutes += statsToAdd.penaltyMinutes;
+        console.log(`Updated ${player.name}'s stats.`);
+    } else {
+        console.log(`Player with number ${number} not found. Stats not updated.`);
+    }
+}
+//this is no longer needed as we have a new function to update player stats
+
+//function updatePlayerGoals(roster, number, goalsToAdd) {
+//    const player = findPlayerByNumber(roster, number);
+//    if (player) {
+//        player.goals += goalsToAdd;
+//        console.log(`Updated ${player.name}'s goals to ${player.goals}.`);
+//    } else {
+//        console.log(`Player with number ${number} not found. Goals not updated.`);
+//    }
+//}
+
+//function to search
+function findPlayerByNumber(roster, number) {
+    for (const player of roster) {
+        if (player.number === number) {
+            return player;
+        } 
+    }
+    return null;
 }
 
 // Functions to calculate player stats
@@ -130,14 +186,30 @@ function printDividerShort() {
 }
 printDividerShort();
 
+// this is no longer needed as we have a new function to update player stats
+// updatePlayerGoals(roster, 90, 2);
 
+//goals, assists, penalty minutes
+updatePlayerStats(roster, 21, {
+    goals: 3,
+    assists: 2,
+    penaltyMinutes: 4   
+});
 roster.forEach(displayPlayerCard);
+
 
 const teamGoals = calculateTeamGoals(roster);
 const teamAssists = calculateTeamAssists(roster);
 const highestScorer = findTopScorer(roster);
 const teamPoints = calculateTeamPoints(roster);
 const teamPenaltyMinutes = calculateTeamPenaltyMinutes(roster);
+const player = findPlayerByNumber(roster, 21);
+if (player) {
+    console.log(`Player found: ${player.name}`);
+} else {
+    console.log("Player not found.");
+}
+
 
 printDivider();
 console.log("TEAM STATS");
@@ -152,4 +224,10 @@ console.log("AWARDS");
 printDivider();
 console.log(`The top scorer this season is: ${highestScorer.name} with ${highestScorer.goals} goals`);
 printDivider();
+console.log(`The player number you searched for is:`);
+if (player) {
+    console.log(player.name);
+} else {
+    console.log("Player not found.");
+}
 
