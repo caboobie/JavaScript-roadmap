@@ -10,7 +10,7 @@ function findPlayerByNumber(roster, number) {
 function addPlayerToRoster(roster, player) {
     const existingPlayer = findPlayerByNumber(roster, player.number);
 
-    if (existingPlayer) {
+    if (!existingPlayer) {
         roster.push(player);
         console.log(`Player ${player.name} added to the roster.`);
     } else {
