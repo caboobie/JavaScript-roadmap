@@ -1,7 +1,7 @@
+// Player data
 const { roster } = require('./players');
 
-console.log(roster);
-
+// Statistics
 const {
     calculateTeamGoals,
     calculateTeamAssists,
@@ -9,6 +9,21 @@ const {
     calculateTeamPenaltyMinutes,
     findTopScorer
 } = require('./stats');
+
+//Roster management
+const {
+    findPlayerByNumber,
+    addPlayerToRoster,
+    updatePlayerStats,
+    recordGameSheet
+} = require('./roster');
+
+//Test updating a player's stats
+updatePlayerStats(roster, 90, { goals: 1, assists: 2, penaltyMinutes: 0 });
+
+const alex = findPlayerByNumber(roster, 90);
+console.log(alex);
+
 
 console.log(`Goals: ${calculateTeamGoals(roster)}`);
 console.log(`Assists: ${calculateTeamAssists(roster)}`);
