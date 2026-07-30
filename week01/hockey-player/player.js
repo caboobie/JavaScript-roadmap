@@ -5,13 +5,15 @@ function createPlayer(playerDetails) {
         name: playerDetails.name,
         number: playerDetails.number,
         position: playerDetails.position,
-        team: playerDetails.team,
+        team: playerDetails.team ?? TEAM_NAME,
         goals: playerDetails.goals ?? 0,
         assists: playerDetails.assists ?? 0,
         penaltyMinutes: playerDetails.penaltyMinutes ?? 0,
         favouriteSharkFact: playerDetails.favouriteSharkFact
     };
 }
+
+
 
 const alexPickering = createPlayer({
     name: "Alexander Pickering",
@@ -54,6 +56,14 @@ const ChloeStephenson = createPlayer({
     favouriteSharkFact: "Sharks have been around longer than dinosaurs"
 });
 
+const scottBrown = createPlayer({
+    name: "Scott Brown",
+    number: 5,
+    position: "Centre",
+    favouriteSharkFact: "Sharks can swim up to 25 miles per hour"
+});
+
+
 const roster = [
     alexPickering,
     nathanMilne,
@@ -90,14 +100,32 @@ function displayPlayerCard(player) {
 function updatePlayerStats(roster, number, statsToAdd) {
     const player = findPlayerByNumber(roster, number);
     if (player) {
-        player.goals += statsToAdd.goals;
-        player.assists += statsToAdd.assists;
-        player.penaltyMinutes += statsToAdd.penaltyMinutes;
+        player.goals += statsToAdd.goals ?? 0;
+        player.assists += statsToAdd.assists ?? 0;
+        player.penaltyMinutes += statsToAdd.penaltyMinutes ?? 0;
         console.log(`Updated ${player.name}'s stats.`);
     } else {
         console.log(`Player with number ${number} not found. Stats not updated.`);
     }
 }
+
+function recordGameSheet(roster, gameStats) {
+    for (const stats of gameStats) {
+        updatePlayerStats(roster, stats.number, stats); {
+        }
+    }
+}
+
+function addPlayerToRoster(roster, player) {
+    if (!findPlayerByNumber(roster, player.number)) {
+        roster.push(player);
+        console.log(`Added ${player.name} to the roster.`);
+    } else {
+        console.log(`Player with number ${player.number} is already on the roster.`);
+    }
+}
+
+
 //this is no longer needed as we have a new function to update player stats
 
 //function updatePlayerGoals(roster, number, goalsToAdd) {
@@ -190,11 +218,24 @@ printDividerShort();
 // updatePlayerGoals(roster, 90, 2);
 
 //goals, assists, penalty minutes
-updatePlayerStats(roster, 21, {
-    goals: 3,
-    assists: 2,
-    penaltyMinutes: 4   
-});
+
+addPlayerToRoster(roster, scottBrown);
+
+recordGameSheet(roster, [
+    { number: 90, goals: 2, assists: 0, penaltyMinutes: 2 },
+    { number: 21, goals: 4, assists: 2, penaltyMinutes: 4 },
+    { number: 24, goals: 2, assists: 1, penaltyMinutes: 0 }
+]);
+
+// this is no longer needed as we have a new function to update player stats via recordGameSheet
+// updatePlayerStats(roster, 21, {
+//     goals: 3,
+//     assists: 2,
+//     penaltyMinutes: 4   
+// });
+
+console.log();
+
 roster.forEach(displayPlayerCard);
 
 
@@ -203,6 +244,7 @@ const teamAssists = calculateTeamAssists(roster);
 const highestScorer = findTopScorer(roster);
 const teamPoints = calculateTeamPoints(roster);
 const teamPenaltyMinutes = calculateTeamPenaltyMinutes(roster);
+
 const player = findPlayerByNumber(roster, 21);
 if (player) {
     console.log(`Player found: ${player.name}`);
