@@ -1,5 +1,6 @@
 // Player data
 const { roster } = require('./players');
+const { recordGame } = require('./game');
 
 // Statistics
 const {
@@ -25,7 +26,7 @@ const {
     printDivider
 } = require(`./display`);
 
-//create players
+//inputs
 const { createPlayer } = require(`./player`);
 
 const sarahWilson = createPlayer({
@@ -40,8 +41,13 @@ const sarahWilson = createPlayer({
 
 addPlayerToRoster(roster, sarahWilson);
 
+const gameSheet = [
+    { number: 90, goals: 1, assists: 2, penaltyMinutes: 0 },
+    { number: 24, goals: 0, assists: 1, penaltyMinutes: 2 },
+    { number: 18, goals: 2, assists: 0, penaltyMinutes: 0 }
+];
 
-
+recordGame(roster, gameSheet);
 //Test updating a player's stats
 updatePlayerStats(roster, 90, { goals: 1, assists: 2, penaltyMinutes: 0 });
 
