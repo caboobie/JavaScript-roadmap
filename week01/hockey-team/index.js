@@ -48,20 +48,15 @@ const gameSheet = [
 ];
 
 recordGame(roster, gameSheet);
-//Test updating a player's stats
-updatePlayerStats(roster, 90, { goals: 1, assists: 2, penaltyMinutes: 0 });
-
-const alex = findPlayerByNumber(roster, 90);
-const abbie = findPlayerByNumber(roster, 24);
-
-//displayPlayerCard(abbie);
 
 console.log();
 console.log("TEAM STATS");
+
 console.log(`Goals: ${calculateTeamGoals(roster)}`);
 console.log(`Assists: ${calculateTeamAssists(roster)}`);
 console.log(`Points: ${calculateTeamPoints(roster)}`);
 console.log(`Penalty Minutes: ${calculateTeamPenaltyMinutes(roster)}`);
+
 console.log();
 
 const topScorer = findTopScorer(roster);
