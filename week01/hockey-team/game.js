@@ -1,5 +1,6 @@
 const { updatePlayerStats, findPlayerByNumber } = require('./roster');
 const { roster } = require('./players');
+const { games } = require('./games');
 
 function recordGame(roster,gameSheet) {
     for (const gameStats of gameSheet) {
@@ -23,7 +24,7 @@ function createGame(opponent, date, venue, ourScore, opponentScore) {
     } else {
         result = 'Draw';
     }
-    return {
+    const game = {
         opponent,
         date,
         venue,
@@ -31,6 +32,10 @@ function createGame(opponent, date, venue, ourScore, opponentScore) {
         opponentScore,
         result
     };
+
+    games.push(game);
+
+    return game;
 }
 
 
@@ -45,3 +50,5 @@ const testGame = createGame(
 );
 
 console.log(testGame);
+console.log(games);
+
