@@ -1,6 +1,6 @@
 const { updatePlayerStats, findPlayerByNumber } = require('./roster');
 const { roster } = require('./players');
-const { games } = require('./games');
+const { games, addGame } = require('./games');
 
 function recordGame(roster,gameSheet) {
     for (const gameStats of gameSheet) {
@@ -33,7 +33,7 @@ function createGame(opponent, date, venue, ourScore, opponentScore) {
         result
     };
 
-    games.push(game);
+    addGame(game); // Call the addGame function to add the game to the games array
 
     return game;
 }
@@ -42,6 +42,14 @@ function createGame(opponent, date, venue, ourScore, opponentScore) {
 module.exports = { recordGame, createGame };
 
 const testGame = createGame(
+    "Billingham Blackhawks",
+    "10/05/2026",
+    "Billingham Forum",
+    3,
+    3
+);
+
+const duplicateGame = createGame(
     "Billingham Blackhawks",
     "10/05/2026",
     "Billingham Forum",
