@@ -36,7 +36,14 @@ function displayPlayerCard(player) {
     console.log();
 }
 
-function displayTeamStats(roster) {
+function displayTeamStats(
+    roster,
+    calculateTeamGoals,
+    calculateTeamAssists,
+    calculateTeamPoints,
+    calculateTeamPenaltyMinutes,
+    findTopScorer
+) {
     printDivider();
 
     console.log("TEAM STATS");
@@ -44,6 +51,14 @@ function displayTeamStats(roster) {
     printDivider();
 
     console.log(`players: ${roster.length}`);
+    console.log(`goals: ${calculateTeamGoals(roster)}`);
+    console.log(`assists: ${calculateTeamAssists(roster)}`);
+    console.log(`points: ${calculateTeamPoints(roster)}`);
+    console.log(`penalty minutes: ${calculateTeamPenaltyMinutes(roster)}`);
+
+    const topScorer = findTopScorer(roster);
+
+    console.log(`top scorer: ${topScorer.name} (#${topScorer.number}) with ${topScorer.goals} goals`);
 }
 
 
