@@ -145,10 +145,10 @@ function startInteractive() {
                                 askForNumber("Penalty minutes for player: ", (penaltyMinutes) => {
 
                                     gameSheet.push({
-                                        number: Number(playerNumber),
-                                        goals: Number(goals),
-                                        assists: Number(assists),
-                                        penaltyMinutes: Number(penaltyMinutes)
+                                        number: number,
+                                        goals: goals,
+                                        assists: assists,
+                                        penaltyMinutes: penaltyMinutes
                                     });
 
                                     console.log(`Player ${player.name} (Number: ${player.number}) added to the game sheet.`);
@@ -162,8 +162,6 @@ function startInteractive() {
                 }
                 askForPlayer();
                 break;
-
-               
 
             case '5':
                 console.log("Goodbye!");

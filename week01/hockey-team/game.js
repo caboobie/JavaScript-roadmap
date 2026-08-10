@@ -12,5 +12,36 @@ function recordGame(roster,gameSheet) {
     }
 }
 
+function createGame(opponent, date, venue, ourScore, opponentScore) {
+   
+    let result;
 
-module.exports = { recordGame };
+    if (ourScore > opponentScore) {
+        result = 'Win';
+    } else if (ourScore < opponentScore) {
+        result = 'Loss';
+    } else {
+        result = 'Draw';
+    }
+    return {
+        opponent,
+        date,
+        venue,
+        ourScore,
+        opponentScore,
+        result
+    };
+}
+
+
+module.exports = { recordGame, createGame };
+
+const testGame = createGame(
+    "Billingham Blackhawks",
+    "10/05/2026",
+    "Billingham Forum",
+    3,
+    3
+);
+
+console.log(testGame);
