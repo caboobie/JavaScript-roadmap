@@ -1,6 +1,8 @@
 const readline = require('readline');
-
+const { showMenu } = require('./menu');
 const { roster } = require('./players');
+const { askForNumber } = require('./input');
+
 
 const { displayPlayerCard, 
 displayTeamStats
@@ -23,34 +25,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-function askForNumber(question, callback) {
-    rl.question(question, (answer) => {
-        const number = Number(answer);
 
-        if (isNaN(number)) {
-            console.log("Invalid input. Please enter a valid number.");
-            askForNumber(question, callback);
-        return;
-        }
-
-        callback(number);
-    });
-}
-
-
-function showMenu() {
-    console.log("============================");
-    console.log("      WHITLEY BAY SHARKS");
-    console.log("============================");
-    console.log("1. View Roster");
-    console.log("2. Find Player");
-    console.log("3. View Team Stats");
-    console.log("4. Record Game");
-    console.log("5. View Games");
-    console.log("6. Exit");
-    console.log("============================");
-    console.log("============================");
-}
 
 function startInteractive() {
     showMenu();
@@ -69,7 +44,7 @@ function startInteractive() {
             case '2':
                 console.log(" You selected: Find Player");
                 // Call the function to find a player here
-                askForNumber("Enter player number: ", (playerNumber) => {
+                askForNumber(rl, "Enter player number: ", (playerNumber) => {
                     const player = findPlayerByNumber(roster, playerNumber);
 
                     if (player) {
@@ -104,10 +79,12 @@ function startInteractive() {
             rl.question("Enter venue: ", (venue) => {
 
                 askForNumber(
+                    rl,
                     "Enter goals scored by Whitley Bay Sharks: ",
                     (goalsScored) => {
 
                         askForNumber(
+                            rl,
                             "Enter goals scored by opponent: ",
                             (goalsConceded) => {
 
