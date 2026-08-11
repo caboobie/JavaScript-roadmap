@@ -14,4 +14,3 @@ function askForNumber(rl, question, callback) {
 module.exports = {
     askForNumber
 };
-console.log(askForNumber);
