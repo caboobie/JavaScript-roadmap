@@ -13,7 +13,7 @@ function recordGame(roster,gameSheet) {
     }
 }
 
-function createGame(opponent, date, venue, ourScore, opponentScore) {
+function createGame(opponent, date, venue, ourScore, opponentScore, playerStats) {
    
     let result;
 
@@ -30,7 +30,8 @@ function createGame(opponent, date, venue, ourScore, opponentScore) {
         venue,
         ourScore,
         opponentScore,
-        result
+        result,
+        playerStats
     };
 
     addGame(game); // Call the addGame function to add the game to the games array
@@ -40,23 +41,3 @@ function createGame(opponent, date, venue, ourScore, opponentScore) {
 
 
 module.exports = { recordGame, createGame };
-
-const testGame = createGame(
-    "Billingham Blackhawks",
-    "10/05/2026",
-    "Billingham Forum",
-    3,
-    3
-);
-
-const duplicateGame = createGame(
-    "Billingham Blackhawks",
-    "10/05/2026",
-    "Billingham Forum",
-    3,
-    3
-);
-
-console.log(testGame);
-console.log(games);
-

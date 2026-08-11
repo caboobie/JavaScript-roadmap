@@ -15,7 +15,8 @@ const { calculateTeamGoals,
         findTopScorer 
     } = require('./stats');
 
-const { recordGame } = require('./game');
+const { recordGame, createGame } = require('./game');
+const { games } = require('./games');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -45,7 +46,8 @@ function showMenu() {
     console.log("2. Find Player");
     console.log("3. View Team Stats");
     console.log("4. Record Game");
-    console.log("5. Exit");
+    console.log("5. View Games");
+    console.log("6. Exit");
     console.log("============================");
     console.log("============================");
 }
@@ -53,7 +55,7 @@ function showMenu() {
 function startInteractive() {
     showMenu();
 
-    rl.question("Select an option (1-5): ", (choice) => {
+    rl.question("Select an option (1-6): ", (choice) => {
 
         switch (choice) {
             case '1':
@@ -95,81 +97,174 @@ function startInteractive() {
                 break;
 
             case '4':
-                console.log(" You selected: Record Game");
+    console.log("You selected: Record Game");
 
-                const gameSheet = [];
+    rl.question("Enter opponent team name: ", (opponent) => {
+        rl.question("Enter game date (DD-MM-YYYY): ", (date) => {
+            rl.question("Enter venue: ", (venue) => {
 
-                function askForPlayer() {
-                    
+                askForNumber(
+                    "Enter goals scored by Whitley Bay Sharks: ",
+                    (goalsScored) => {
 
-                    rl.question("Enter player number (or type 'done' to finish): ", (playerNumber) => {
+                        askForNumber(
+                            "Enter goals scored by opponent: ",
+                            (goalsConceded) => {
 
-                        if (playerNumber.toLowerCase() === 'done') {
-                            recordGame(roster, gameSheet);
-                            console.log(" Game recorded.");
-                            startInteractive();
-                            return;
-                        }
+                                // Store all player stats for this game
+                                const gameSheet = [];
 
-                        const number = Number(playerNumber);
+                                function askForPlayer() {
 
-                        if (isNaN(number)) {
-                            console.log("Invalid input. Please enter a valid number.");
-                            askForPlayer();
-                            return;
-                        }
+                                    rl.question(
+                                        "Enter player number (or type 'done' to finish): ",
+                                        (playerNumber) => {
 
-                        const player = findPlayerByNumber(roster, number);
+                                            if (playerNumber.toLowerCase() === 'done') {
 
-                        if (!player) {
-                            console.log(`Player with number ${number} not found in the roster.`);
-                            askForPlayer();
-                            return;
-                        }
+                                                // Create the complete game
+                                                const game = createGame(
+                                                    opponent,
+                                                    date,
+                                                    venue,
+                                                    goalsScored,
+                                                    goalsConceded,
+                                                    gameSheet
+                                                );
 
-                        const existingPlayer = gameSheet.find(
-                            player => player.number === number
+                                                // Update season statistics
+                                                recordGame(roster, gameSheet);
+
+                                                console.log();
+                                                console.log("Game recorded.");
+                                                console.log(game);
+                                                console.log();
+
+                                                startInteractive();
+                                                return;
+                                            }
+
+                                            const number = Number(playerNumber);
+
+                                            if (isNaN(number)) {
+                                                console.log(
+                                                    "Invalid input. Please enter a valid number."
+                                                );
+                                                askForPlayer();
+                                                return;
+                                            }
+
+                                            const player =
+                                                findPlayerByNumber(roster, number);
+
+                                            if (!player) {
+                                                console.log(
+                                                    `Player with number ${number} not found in the roster.`
+                                                );
+                                                askForPlayer();
+                                                return;
+                                            }
+
+                                            const existingPlayer = gameSheet.find(
+                                                player => player.number === number
+                                            );
+
+                                            if (existingPlayer) {
+                                                console.log(
+                                                    `Player with number ${number} has already been added to the game sheet.`
+                                                );
+                                                askForPlayer();
+                                                return;
+                                            }
+
+                                            askForNumber(
+                                                "Goals scored by player: ",
+                                                (goals) => {
+
+                                                    askForNumber(
+                                                        "Assists made by player: ",
+                                                        (assists) => {
+
+                                                            askForNumber(
+                                                                "Penalty minutes for player: ",
+                                                                (penaltyMinutes) => {
+
+                                                                    gameSheet.push({
+                                                                        number: number,
+                                                                        goals: goals,
+                                                                        assists: assists,
+                                                                        penaltyMinutes: penaltyMinutes
+                                                                    });
+
+                                                                    console.log(
+                                                                        `Player ${player.name} (#${player.number}) added to the game sheet.`
+                                                                    );
+
+                                                                    console.log();
+
+                                                                    askForPlayer();
+                                                                }
+                                                            );
+                                                        }
+                                                    );
+                                                }
+                                            );
+                                        }
+                                    );
+                                }
+
+                                askForPlayer();
+                            }
                         );
+                    }
+                );
+            });
+        });
+    });
 
-                        if (existingPlayer) {
-                            console.log(`Player with number ${number} has already been added to the game sheet.`);
-                            askForPlayer();
-                            return;
-                        }
-                        
+    break;
+            case '5':
+                console.log(" You selected: View Games");
 
-
-
-                        askForNumber("Goals scored by player: ", (goals) => {
-                            askForNumber("Assists made by player: ", (assists) => {
-                                askForNumber("Penalty minutes for player: ", (penaltyMinutes) => {
-
-                                    gameSheet.push({
-                                        number: number,
-                                        goals: goals,
-                                        assists: assists,
-                                        penaltyMinutes: penaltyMinutes
-                                    });
-
-                                    console.log(`Player ${player.name} (Number: ${player.number}) added to the game sheet.`);
-                                    console.log();
-
-                                    askForPlayer();
-                                });
-                            });
+                if (games.length === 0) {
+                    console.log("No games recorded.");
+                } else {
+                    games.forEach((game, index) => {
+                        console.log("===========================");
+                        console.log(`Game ${index + 1}:`);
+                        console.log("============================");
+                        console.log(`Opponent: ${game.opponent}`);
+                        console.log(`Date: ${game.date}`);
+                        console.log(`Venue: ${game.venue}`);
+                        console.log(`Goals Scored: ${game.ourScore}`);
+                        console.log(`Goals Conceded: ${game.opponentScore}`);
+                        console.log(`Result: ${game.result}`);
+                        console.log("============================");
+                        console.log("Player Stats:");
+                        console.log("============================");
+                        game.playerStats.forEach((playerStat) => {
+                            const player = findPlayerByNumber(roster, playerStat.number);
+                            if (player) {
+                                console.log(`Player: ${player.name} (Number: ${player.number})`);
+                                console.log(`Goals: ${playerStat.goals}`);
+                                console.log(`Assists: ${playerStat.assists}`);
+                                console.log(`Penalty Minutes: ${playerStat.penaltyMinutes}`);
+                                console.log("----------------------------");
+                            }
                         });
                     });
+
                 }
-                askForPlayer();
+                startInteractive(); // Show the menu again after viewing games
                 break;
 
-            case '5':
-                console.log("Goodbye!");
+                case '6':
+                    console.log("Goodbye!");
                 rl.close();
                 return;
 
             default:
-                console.log(" Invalid option. Please select a number between 1 and 5.");
+                console.log(" Invalid option. Please select a number between 1 and 6.");
 
                 startInteractive();
                 break;
