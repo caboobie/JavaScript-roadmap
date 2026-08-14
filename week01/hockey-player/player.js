@@ -48,7 +48,7 @@ const abbieStephenson = createPlayer({
     favouriteSharkFact: "Some sharks can replace their teeth thousands of times"
 });
 
-const ChloeStephenson = createPlayer({
+const chloeStephenson = createPlayer({
     name: "Chloe Stephenson",
     number: 12,
     position: "Right Winger",
@@ -68,7 +68,7 @@ const roster = [
     alexPickering,
     nathanMilne,
     abbieStephenson,
-    ChloeStephenson
+    chloeStephenson
 ];
 
 function displayPlayerCard(player) {
