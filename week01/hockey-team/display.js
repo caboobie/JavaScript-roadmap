@@ -7,24 +7,16 @@ function printDividerShort() {
 }
 
 function displayPlayerCard(player) {
-    printDivider();
-
-    console.log(`#${player.number} ${player.name}`);
+    const currentSeason = player.seasons[0];
 
     printDivider();
 
-    console.log(`Position: ${player.position}`);
+    console.log(`#${currentSeason.number} ${player.name}`);
+
+    printDivider();
+
+    console.log(`Position: ${currentSeason.position}`);
     console.log(`Team: ${player.team}`);
-
-    console.log();
-
-    console.log("STATS");
-    printDividerShort();
-
-    console.log(`Goals: ${player.goals}`);
-    console.log(`Assists: ${player.assists}`);
-    console.log(`Points: ${player.goals + player.assists}`);
-    console.log(`Penalty Minutes: ${player.penaltyMinutes}`);
 
     console.log();
 
@@ -38,6 +30,7 @@ function displayPlayerCard(player) {
 
 function displayTeamStats(
     roster,
+    season,
     calculateTeamGoals,
     calculateTeamAssists,
     calculateTeamPoints,
@@ -46,19 +39,29 @@ function displayTeamStats(
 ) {
     printDivider();
 
-    console.log("TEAM STATS");
+    console.log(`Team Stats for Season ${season}`);
 
     printDivider();
 
     console.log(`players: ${roster.length}`);
-    console.log(`goals: ${calculateTeamGoals(roster)}`);
-    console.log(`assists: ${calculateTeamAssists(roster)}`);
-    console.log(`points: ${calculateTeamPoints(roster)}`);
-    console.log(`penalty minutes: ${calculateTeamPenaltyMinutes(roster)}`);
+    console.log(`goals: ${calculateTeamGoals(roster, season)}`);
+    console.log(`assists: ${calculateTeamAssists(roster, season)}`);
+    console.log(`points: ${calculateTeamPoints(roster, season)}`);
+    console.log(`penalty minutes: ${calculateTeamPenaltyMinutes(roster, season)}`);
 
-    const topScorer = findTopScorer(roster);
+    const topScorer = findTopScorer(roster, season);
 
-    console.log(`top scorer: ${topScorer.name} (#${topScorer.number}) with ${topScorer.goals} goals`);
+    if (topScorer) {
+        const playerSeason = topScorer.seasons.find(
+            playerSeason => playerSeason.season === season
+        );
+
+        console.log(
+            `Top Scorer: ${topScorer.name} (#${playerSeason.number}) with ${playerSeason.goals} goals`
+        );
+    } else {
+        console.log("No top scorer found for this season.");
+    }
 }
 
 

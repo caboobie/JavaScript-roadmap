@@ -36,7 +36,7 @@ function recordGameInteractive(rl, roster, askForNumber, onComplete) {
                                                     gameSheet
                                                 );
 
-                                                recordGame(roster, gameSheet);
+                                                recordGame(roster, gameSheet, "2026/27");
 
                                                 console.log();
                                                 console.log("Game recorded.");
@@ -105,7 +105,7 @@ function recordGameInteractive(rl, roster, askForNumber, onComplete) {
                                                                     });
 
                                                                     console.log(
-                                                                        `Player ${player.name} (#${player.number}) added to the game sheet.`
+                                                                        `Player ${player.name} (#${number}) added to the game sheet.`
                                                                     );
 
                                                                     console.log();

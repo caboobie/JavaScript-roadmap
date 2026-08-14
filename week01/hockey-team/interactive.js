@@ -62,6 +62,7 @@ function startInteractive() {
                 // Call the function to view team stats here
                 displayTeamStats(
                     roster,
+                    "2026/27",
                     calculateTeamGoals,
                     calculateTeamAssists,
                     calculateTeamPoints,

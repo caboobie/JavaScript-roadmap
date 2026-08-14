@@ -1,0 +1,77 @@
+[
+    {
+        "name": "Alexander Pickering",
+        "team": "Whitley Bay Sharks",
+        "favouriteSharkFact": "Sharks first appeared 450 million years ago!",
+        "seasons": [
+            {
+                "season": "2026/27",
+                "number": 90,
+                "position": "Defence",
+                "goals": 2,
+                "assists": 0,
+                "PenaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Nathan Milne",
+        "team": "Whitley Bay Sharks",
+        "favouriteSharkFact": "Sharks have existed longer than trees",
+        "seasons": [
+            {
+                "season": "2026/27",
+                "number": 21,
+                "position": "Centre",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Abbie Stephenson",
+        "team": "Whitley Bay Sharks",
+        "favouriteSharkFact": "Some sharks can replace their teeth thousands of times",
+        "seasons": [
+            {
+                "season": "2026/27",
+                "number": 24,
+                "position": "Left Wing",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Chloe Stephenson",
+        "team": "Whitley Bay Sharks",
+        "favouriteSharkFact": "Sharks have been around longer than dinosaurs",
+        "seasons": [
+            {
+                "season": "2026/27",
+                "number": 18,
+                "position": "Right Wing",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Scott Brown",
+        "team": "Whitley Bay Sharks",
+        "favouriteSharkFact": "Sharks can swim up to 25 miles per hour",
+        "seasons": [
+            {
+                "season": "2026/27",
+                "number": 5,
+                "position": "Centre",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    }
+]

@@ -1,10 +1,9 @@
 function findPlayerByNumber(roster, number) {
-    for (const player of roster) {
-        if (player.number === number) {
-            return player;
-        }
-    }
-    return null; // Return null if no player is found with the given number
+    return roster.find(player =>
+        player.seasons.some(season =>
+            season.number === number
+        )
+    );
 }
 
 function addPlayerToRoster(roster, player) {

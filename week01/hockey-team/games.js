@@ -1,9 +1,37 @@
-const games = [];
+const fs = require("fs");
+
+const FILE_PATH = "./data/games.json";
+
+let games = [];
+
+function loadGames() {
+    try {
+        const data = fs.readFileSync(FILE_PATH, "utf8");
+
+        games = JSON.parse(data);
+
+        console.log(`${games.length} game(s) Loaded.`);
+    } catch (err) {
+        console.log("could not load games:", err.message);
+        games = [];
+    }
+}
+
+function saveGames() {
+    try {
+        fs.writeFileSync(
+            FILE_PATH,
+            JSON.stringify(games, null, 4)
+        );
+    } catch (error) {
+        console.log("could not save games:", err.message);
+    }
+}
 
 function addGame(game) {
     const existingGame = games.find(existingGame =>
-        existingGame.opponent === game.opponent &&
-        existingGame.date === game.date
+        ExistingGame.opponent === game.opponent &&
+        existingGame.date === game.data
     );
 
     if (existingGame) {
@@ -15,11 +43,18 @@ function addGame(game) {
 
     games.push(game);
 
-    console.log(`Game against ${game.opponent} on ${game.date} added successfully.`);
+    saveGames();
+    console.log(
+        `Game against ${game.opponent} on ${game.date} added successfully.`
+    );
     return true;
 }
 
+loadGames();
+
 module.exports = {
     games,
-    addGame
+    addGame,
+    loadGames,
+    saveGames
 };

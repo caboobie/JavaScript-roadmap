@@ -1,68 +1,41 @@
-const { createPlayer } = require("./player");
+const fs = require("fs");
 
-const alexPickering = createPlayer({
-    name: "Alexander Pickering",
-    number: 90,
-    position: "Defence",
-    goals: 0,
-    assists: 1,
-    penaltyMinutes: 8,
-    favouriteSharkFact: "Sharks first appeared 450 million years ago!"
-});
+const FILE_PATH = "./data/players.json";
 
-const nathanMilne = createPlayer({
-    name: "Nathan Milne",
-    number: 21,
-    position: "Centre",
-    goals: 5,
-    assists: 8,
-    penaltyMinutes: 0,
-    favouriteSharkFact: "Sharks have existed longer than trees"
-});
-
-const abbieStephenson = createPlayer({
-    name: "Abbie Stephenson",
-    number: 24,
-    position: "Left Winger",
-    goals: 7,
-    assists: 4,
-    penaltyMinutes: 6,
-    favouriteSharkFact: "Some sharks can replace their teeth thousands of times"
-});
-
-const chloeStephenson = createPlayer({
-    name: "Chloe Stephenson",
-    number: 12,
-    position: "Right Winger",
-    favouriteSharkFact: "Sharks have been around longer than dinosaurs"
-});
-
-const scottBrown = createPlayer({
-    name: "Scott Brown",
-    number: 5,
-    position: "Centre",
-    favouriteSharkFact: "Sharks can swim up to 25 miles per hour"
-});
+let roster = [];
 
 
 
+function loadPlayers() {
+    try {
+        const data = fs.readFileSync(FILE_PATH, "utf8");
 
+        roster = JSON.parse(data);
 
+        console.log(`${roster.length} player(s) loaded.`);
+    } catch (error) {
+        console.log("could not load players:", error.message);
+        roster = [];
+    }
+}
 
+function savePlayers(playersToSave = roster) {
+    try {
+        fs.writeFileSync(
+            FILE_PATH,
+            JSON.stringify(playersToSave, null, 4)
+        );
 
+        console.log("Players saved.");
+    } catch (error) {
+        console.log("Could not save players:", error.message);
+    }
+}
 
-
-
-const roster = [
-    alexPickering,
-    nathanMilne,
-    abbieStephenson,
-    chloeStephenson,
-    scottBrown
-];
-
-
+loadPlayers();
 
 module.exports = {
-    roster
+    roster,
+    loadPlayers,
+    savePlayers
 };
