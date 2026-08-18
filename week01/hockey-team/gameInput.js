@@ -1,133 +1,170 @@
 const { createGame, recordGame } = require("./game");
 const { findPlayerByNumber } = require("./roster");
+const { CURRENT_SEASON } = require("./config");
 
 function recordGameInteractive(rl, roster, askForNumber, onComplete) {
     console.log("You selected: Record Game");
 
     rl.question("Enter opponent team name: ", (opponent) => {
-        rl.question("Enter game date (DD-MM-YYYY): ", (date) => {
-            rl.question("Enter venue: ", (venue) => {
 
-                askForNumber(
-                    rl,
-                    "Enter goals scored by Whitley Bay Sharks: ",
-                    (goalsScored) => {
+        rl.question(
+            "Home or Away? (H/A): ",
+            (locationInput) => {
 
-                        askForNumber(
-                            rl,
-                            "Enter goals scored by opponent: ",
-                            (goalsConceded) => {
+                const location =
+                    locationInput.toLowerCase() === "h"
+                        ? "Home"
+                        : "Away";
 
-                                const gameSheet = [];
+                rl.question(
+                    "Enter game date (DD-MM-YYYY): ",
+                    (date) => {
 
-                                function askForPlayer() {
-                                    rl.question(
-                                        "Enter player number (or type 'done' to finish): ",
-                                        (playerNumber) => {
+                        rl.question(
+                            "Enter venue: ",
+                            (venue) => {
 
-                                            if (playerNumber.toLowerCase() === "done") {
+                                askForNumber(
+                                    rl,
+                                    "Enter goals scored by Whitley Bay Sharks: ",
+                                    (goalsScored) => {
 
-                                                const game = createGame(
-                                                    opponent,
-                                                    date,
-                                                    venue,
-                                                    goalsScored,
-                                                    goalsConceded,
-                                                    gameSheet
-                                                );
+                                        askForNumber(
+                                            rl,
+                                            "Enter goals scored by opponent: ",
+                                            (goalsConceded) => {
 
-                                                recordGame(roster, gameSheet, "2026/27");
+                                                const gameSheet = [];
 
-                                                console.log();
-                                                console.log("Game recorded.");
-                                                console.log(game);
-                                                console.log();
+                                                function askForPlayer() {
+                                                    rl.question(
+                                                        "Enter player number (or type 'done' to finish): ",
+                                                        (playerNumber) => {
 
-                                                onComplete();
-                                                return;
-                                            }
+                                                            if (
+                                                                playerNumber.toLowerCase() === "done"
+                                                            ) {
 
-                                            const number = Number(playerNumber);
+                                                                const game =
+                                                                    createGame(
+                                                                        opponent,
+                                                                        location,
+                                                                        date,
+                                                                        venue,
+                                                                        goalsScored,
+                                                                        goalsConceded,
+                                                                        gameSheet
+                                                                    );
 
-                                            if (isNaN(number)) {
-                                                console.log(
-                                                    "Invalid input. Please enter a valid number."
-                                                );
-                                                askForPlayer();
-                                                return;
-                                            }
+                                                                recordGame(
+                                                                    roster,
+                                                                    gameSheet,
+                                                                    CURRENT_SEASON
+                                                                );
 
-                                            const player = findPlayerByNumber(
-                                                roster,
-                                                number
-                                            );
+                                                                console.log();
+                                                                console.log(
+                                                                    "Game recorded."
+                                                                );
+                                                                console.log(game);
+                                                                console.log();
 
-                                            if (!player) {
-                                                console.log(
-                                                    `Player with number ${number} not found in the roster.`
-                                                );
-                                                askForPlayer();
-                                                return;
-                                            }
+                                                                onComplete();
+                                                                return;
+                                                            }
 
-                                            const existingPlayer = gameSheet.find(
-                                                player => player.number === number
-                                            );
+                                                            const number =
+                                                                Number(playerNumber);
 
-                                            if (existingPlayer) {
-                                                console.log(
-                                                    `Player with number ${number} has already been added to the game sheet.`
-                                                );
-                                                askForPlayer();
-                                                return;
-                                            }
+                                                            if (isNaN(number)) {
+                                                                console.log(
+                                                                    "Invalid input. Please enter a valid number."
+                                                                );
+                                                                askForPlayer();
+                                                                return;
+                                                            }
 
-                                            askForNumber(
-                                                rl,
-                                                "Goals scored by player: ",
-                                                (goals) => {
+                                                            const player =
+                                                                findPlayerByNumber(
+                                                                    roster,
+                                                                    number
+                                                                );
 
-                                                    askForNumber(
-                                                        rl,
-                                                        "Assists made by player: ",
-                                                        (assists) => {
+                                                            if (!player) {
+                                                                console.log(
+                                                                    `Player with number ${number} not found in the roster.`
+                                                                );
+                                                                askForPlayer();
+                                                                return;
+                                                            }
+
+                                                            const existingPlayer =
+                                                                gameSheet.find(
+                                                                    player =>
+                                                                        player.number ===
+                                                                        number
+                                                                );
+
+                                                            if (existingPlayer) {
+                                                                console.log(
+                                                                    `Player with number ${number} has already been added to the game sheet.`
+                                                                );
+                                                                askForPlayer();
+                                                                return;
+                                                            }
 
                                                             askForNumber(
                                                                 rl,
-                                                                "Penalty minutes for player: ",
-                                                                (penaltyMinutes) => {
+                                                                "Goals scored by player: ",
+                                                                (goals) => {
 
-                                                                    gameSheet.push({
-                                                                        number: number,
-                                                                        goals: goals,
-                                                                        assists: assists,
-                                                                        penaltyMinutes: penaltyMinutes
-                                                                    });
+                                                                    askForNumber(
+                                                                        rl,
+                                                                        "Assists made by player: ",
+                                                                        (assists) => {
 
-                                                                    console.log(
-                                                                        `Player ${player.name} (#${number}) added to the game sheet.`
+                                                                            askForNumber(
+                                                                                rl,
+                                                                                "Penalty minutes for player: ",
+                                                                                (penaltyMinutes) => {
+
+                                                                                    gameSheet.push(
+                                                                                        {
+                                                                                            number,
+                                                                                            goals,
+                                                                                            assists,
+                                                                                            penaltyMinutes
+                                                                                        }
+                                                                                    );
+
+                                                                                    console.log(
+                                                                                        `Player ${player.name} (#${number}) added to the game sheet.`
+                                                                                    );
+
+                                                                                    console.log();
+
+                                                                                    askForPlayer();
+                                                                                }
+                                                                            );
+                                                                        }
                                                                     );
-
-                                                                    console.log();
-
-                                                                    askForPlayer();
                                                                 }
                                                             );
                                                         }
                                                     );
                                                 }
-                                            );
-                                        }
-                                    );
-                                }
 
-                                askForPlayer();
+                                                askForPlayer();
+                                            }
+                                        );
+                                    }
+                                );
                             }
                         );
                     }
                 );
-            });
-        });
+            }
+        );
     });
 }
 

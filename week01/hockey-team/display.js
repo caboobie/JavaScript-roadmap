@@ -19,13 +19,6 @@ function displayPlayerCard(player) {
     console.log(`Team: ${player.team}`);
 
     console.log();
-
-    console.log("SHARK FACT");
-    printDividerShort();
-
-    console.log(player.favouriteSharkFact);
-
-    console.log();
 }
 
 function displayTeamStats(
@@ -64,11 +57,9 @@ function displayTeamStats(
     }
 }
 
-
 module.exports = {
     printDivider,
     printDividerShort,
     displayPlayerCard,
     displayTeamStats
 };
-

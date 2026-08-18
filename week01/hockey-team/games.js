@@ -30,8 +30,9 @@ function saveGames() {
 
 function addGame(game) {
     const existingGame = games.find(existingGame =>
-        ExistingGame.opponent === game.opponent &&
-        existingGame.date === game.data
+        existingGame.opponent === game.opponent &&
+        existingGame.date === game.date &&
+        existingGame.location === game.location
     );
 
     if (existingGame) {

@@ -1,8 +1,14 @@
 const { updatePlayerStats, findPlayerByNumber } = require('./roster');
 const { roster } = require('./players');
 const { games, addGame } = require('./games');
+const { CURRENT_SEASON } = require('./config');
 
-function recordGame(roster, gameSheet, season) {
+function recordGame(
+    roster,
+    gameSheet,
+    season
+) {
+    
     for (const gameStats of gameSheet) {
         const player = findPlayerByNumber(roster, gameStats.number);
         if (player) {
@@ -29,7 +35,15 @@ function recordGame(roster, gameSheet, season) {
     }
 }
 
-function createGame(opponent, date, venue, ourScore, opponentScore, playerStats) {
+function createGame(
+    opponent,
+    location,
+    date,
+    venue,
+    ourScore,
+    opponentScore,
+    playerStats
+) {
    
     let result;
 
@@ -41,7 +55,9 @@ function createGame(opponent, date, venue, ourScore, opponentScore, playerStats)
         result = 'Draw';
     }
     const game = {
+        season: CURRENT_SEASON,
         opponent,
+        location,
         date,
         venue,
         ourScore,

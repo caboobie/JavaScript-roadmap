@@ -4,7 +4,6 @@ function createPlayer(playerDetails) {
     return {
         name: playerDetails.name,
         team: playerDetails.team ?? TEAM_NAME,
-        favouriteSharkFact: playerDetails.favouriteSharkFact,
         seasons: []
     };
 }
@@ -14,9 +13,9 @@ function createSeasonPlayer(seasonDetails) {
         season: seasonDetails.season,
         number: seasonDetails.number,
         position: seasonDetails.position,
-        Goals: seasonDetails.goals ?? 0,
-        Assists: seasonDetails.assists ?? 0,
-        PenaltyMinutes: seasonDetails.penaltyMinutes ?? 0
+        goals: seasonDetails.goals ?? 0,
+        assists: seasonDetails.assists ?? 0,
+        penaltyMinutes: seasonDetails.penaltyMinutes ?? 0
     };
 }
 

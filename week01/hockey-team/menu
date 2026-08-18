@@ -5,11 +5,10 @@ function showMenu() {
     console.log("1. View Team Roster");
     console.log("2. Find Player");
     console.log("3. View Team Stats");
-    console.log("4. Record Game Result");
-    console.log("5. View Game Results");
+    console.log("4. Games");
+    console.log("5. Record New Data");
     console.log("6. Exit");
     console.log("=========================");
-
 }
 
 module.exports = {

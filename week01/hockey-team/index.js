@@ -36,7 +36,6 @@ const sarahWilson = createPlayer({
     goals: 2,
     assists: 5,
     penaltyMinutes: 4,
-    favouriteSharkFact: "Great white sharks are cool"
 });
 
 addPlayerToRoster(roster, sarahWilson);
