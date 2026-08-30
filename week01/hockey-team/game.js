@@ -1,37 +1,49 @@
-const { updatePlayerStats, findPlayerByNumber } = require('./roster');
-const { roster } = require('./players');
-const { games, addGame } = require('./games');
+const { findPlayerByNumber } = require('./roster');
+const { addGame } = require('./games');
 const { CURRENT_SEASON } = require('./config');
+const { printDivider, printDividerShort } = require('./display');
 
 function recordGame(
     roster,
     gameSheet,
     season
 ) {
-    
+
     for (const gameStats of gameSheet) {
-        const player = findPlayerByNumber(roster, gameStats.number);
+
+        const player = findPlayerByNumber(
+            roster,
+            gameStats.number
+        );
+
         if (player) {
+
             const playerSeason = player.seasons.find(
-                playerSeason => playerSeason.season === season
+                playerSeason =>
+                    playerSeason.season === season
             );
 
             if (playerSeason) {
+
+                console.log();
                 playerSeason.goals += gameStats.goals;
                 playerSeason.assists += gameStats.assists;
                 playerSeason.penaltyMinutes += gameStats.penaltyMinutes;
+                console.log();
 
             } else {
+
                 console.log(
                     `Season ${season} not found for ${player.name}.`
                 );
             }
+
         } else {
+
             console.log(
                 `Player with number ${gameStats.number} not found in the roster.`
             );
         }
-        
     }
 }
 

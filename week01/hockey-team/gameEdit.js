@@ -1,4 +1,5 @@
 const { saveGames } = require("./games");
+const { savePlayers } = require("./players");
 const { findPlayerByNumber, adjustPlayerSeasonStats } = require("./roster");
 const { CURRENT_SEASON } = require("./config");
 
@@ -221,6 +222,7 @@ function editGameInteractive(
     }
 
     saveGames();
+    savePlayers();
 
     console.log();
     console.log("Game and player stats saved successfully.");

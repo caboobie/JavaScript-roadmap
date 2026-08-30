@@ -5,7 +5,7 @@ const { askForNumber } = require('./input');
 const { CURRENT_SEASON } = require('./config');
 const { recordNewDataInteractive } = require('./dataInput');
 const { gamesInteractive } = require('./gamesInteractive');
-const { displayPlayerCard, 
+const { displayPlayerCard,displayPlayerCardShort, 
 displayTeamStats
  } = require('./display');
 const { findPlayerByNumber } = require('./roster');
@@ -31,7 +31,7 @@ function startInteractive() {
             case '1':
                 console.log(" You selected: View Roster");
                 // Call the function to view the roster here
-                roster.forEach(displayPlayerCard);
+                roster.forEach(displayPlayerCardShort);
 
                 startInteractive(); // Show the menu again after displaying the roster
                 break;

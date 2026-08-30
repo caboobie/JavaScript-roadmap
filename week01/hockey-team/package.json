@@ -1,0 +1,10 @@
+{
+  "name": "Whitley-bay-sharks",
+  "version": "1.0.0",
+  "description": "A javascript CLI application to manage the Whitley Bay Sharks team data, including players and game sheets.",
+  "main": "interactive.js",
+  "scripts": {
+    "start": "node interactive.js",
+    "test": "node --test"
+  }
+}

@@ -13,21 +13,20 @@ const {
 
 //Roster management
 const {
-    findPlayerByNumber,
-    addPlayerToRoster,
-    updatePlayerStats,
-    recordGameSheet
+    findPlayerByNumber
 } = require('./roster');
 
 //Display
 const {
     displayPlayerCard,
+    displayPlayerCardShort,
     displayTeamStats,
     printDivider
 } = require(`./display`);
 
 //inputs
 const { createPlayer } = require(`./player`);
+const { addPlayerToRoster } = require(`./roster`);
 
 const sarahWilson = createPlayer({
     name: "Sarah Wilson",

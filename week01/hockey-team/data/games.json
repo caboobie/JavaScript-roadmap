@@ -1,1 +1,302 @@
-[]
+[
+    {
+        "season": "2025/26",
+        "opponent": "Northumbria Kings",
+        "location": "Home",
+        "date": "13-03-2026",
+        "venue": "Whitley Bay Ice Rink",
+        "ourScore": 12,
+        "opponentScore": 6,
+        "result": "Win",
+        "playerStats": [
+            {
+                "number": 17,
+                "goals": 6,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 21,
+                "goals": 2,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 58,
+                "goals": 2,
+                "assists": 5,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 11,
+                "goals": 1,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 9916,
+                "goals": 1,
+                "assists": 0,
+                "penaltyMinutes": 2
+            },
+            {
+                "number": 5,
+                "goals": 0,
+                "assists": 2,
+                "penaltyMinutes": 2
+            },
+            {
+                "number": 77,
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 2
+            },
+            {
+                "number": 33,
+                "goals": 0,
+                "assists": 2,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "season": "2025/26",
+        "opponent": "Leeds Warriors",
+        "location": "Away",
+        "date": "17-05-2026",
+        "venue": "Leeds Planet Ice",
+        "ourScore": 10,
+        "opponentScore": 2,
+        "result": "Win",
+        "playerStats": [
+            {
+                "number": 16,
+                "goals": 1,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 58,
+                "goals": 2,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 77,
+                "goals": 1,
+                "assists": 2,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 69,
+                "goals": 1,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 86,
+                "goals": 0,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 92,
+                "goals": 0,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 21,
+                "goals": 3,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 5,
+                "goals": 2,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "season": "2025/26",
+        "opponent": "Coventry Coyotes",
+        "location": "Home",
+        "date": "31-05-2026",
+        "venue": "Whitley Bay Ice Rink",
+        "ourScore": 8,
+        "opponentScore": 1,
+        "result": "Win",
+        "playerStats": [
+            {
+                "number": 16,
+                "goals": 2,
+                "assists": 1,
+                "penaltyMinutes": 2
+            },
+            {
+                "number": 17,
+                "goals": 1,
+                "assists": 1,
+                "penaltyMinutes": 2
+            },
+            {
+                "number": 21,
+                "goals": 0,
+                "assists": 2,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 33,
+                "goals": 0,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 58,
+                "goals": 1,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 77,
+                "goals": 2,
+                "assists": 2,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 80,
+                "goals": 1,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 86,
+                "goals": 0,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 14,
+                "goals": 1,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 9916,
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 2
+            }
+        ]
+    },
+    {
+        "season": "2025/26",
+        "opponent": "Cleveland Comets",
+        "location": "Home",
+        "date": "14-06-2026",
+        "venue": "Whitley Bay Ice Rink",
+        "ourScore": 11,
+        "opponentScore": 6,
+        "result": "Win",
+        "playerStats": [
+            {
+                "number": 5,
+                "goals": 1,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 14,
+                "goals": 1,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 17,
+                "goals": 2,
+                "assists": 2,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 21,
+                "goals": 2,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 26,
+                "goals": 0,
+                "assists": 3,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 33,
+                "goals": 0,
+                "assists": 2,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 77,
+                "goals": 4,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 9905,
+                "goals": 1,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 28,
+                "goals": 0,
+                "assists": 1,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "season": "2025/26",
+        "opponent": "Telford Spartans",
+        "location": "Home",
+        "date": "12-07-2026",
+        "venue": "Whitley Bay Ice Rink",
+        "ourScore": 4,
+        "opponentScore": 3,
+        "result": "Win",
+        "playerStats": [
+            {
+                "number": 28,
+                "goals": 1,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 77,
+                "goals": 1,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 17,
+                "goals": 2,
+                "assists": 0,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 92,
+                "goals": 0,
+                "assists": 1,
+                "penaltyMinutes": 0
+            },
+            {
+                "number": 33,
+                "goals": 0,
+                "assists": 1,
+                "penaltyMinutes": 0
+            }
+        ]
+    }
+]

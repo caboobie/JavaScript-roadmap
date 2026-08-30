@@ -61,7 +61,6 @@ function recordGameInteractive(rl, roster, askForNumber, onComplete) {
                                                                     gameSheet,
                                                                     CURRENT_SEASON
                                                                 );
-
                                                                 console.log();
                                                                 console.log(
                                                                     "Game recorded."

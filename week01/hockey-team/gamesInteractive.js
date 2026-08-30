@@ -1,12 +1,13 @@
 const {games } = require('./games');
 const { findPlayerByNumber } = require('./roster');
 const { editGameInteractive } = require('./gameEdit');
+const { printDivider, printDividerShort } = require('./display');
 
 function displayAllGames(roster) {
     console.log();
-    console.log("=========================");
+    printDivider();
     console.log("  ALL GAMES");
-    console.log("=========================");
+    printDivider();
     console.log();
 
     if (games.length === 0 ) {
@@ -17,9 +18,9 @@ function displayAllGames(roster) {
 
     games.forEach((game, index) => {
 
-        console.log("===========================");
-        console.log(`Game ${index + 1}:`);
-        console.log("============================");
+        printDivider();
+        console.log(`Game ${index + 1}: ${game.opponent}`);
+        printDivider();
         console.log(`Opponent: ${game.opponent}`);
         console.log(`Location: ${game.location}`);
         console.log(`Date: ${game.date}`);
@@ -28,9 +29,9 @@ function displayAllGames(roster) {
         console.log(`Goals Conceded: ${game.opponentScore}`);
         console.log(`Result: ${game.result}`);
 
-        console.log("============================");
+        printDivider();
         console.log("Player Stats:");
-        console.log("============================");
+        printDivider();
 
         game.playerStats.forEach((playerStat) => {
 
@@ -40,9 +41,13 @@ function displayAllGames(roster) {
             );
 
             if (player) {
+                console.log();
+                printDividerShort();
                 console.log(
                     `player: ${player.name} (#${playerStat.number})`
                 );
+                
+
             } else {
                 console.log(
                     `player: #${playerStat.number}`
@@ -55,6 +60,7 @@ function displayAllGames(roster) {
         });
 
         console.log("----------------------------");
+        console.log();
     });
 }
 

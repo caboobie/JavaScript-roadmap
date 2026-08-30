@@ -1,1 +1,352 @@
-[]
+[
+    {
+        "name": "Alexander Pickering",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 90,
+                "position": "Defence",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Ben Cummings",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 9901,
+                "position": "Goalie",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Brett Liddle",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 58,
+                "position": "Winger",
+                "goals": 3,
+                "assists": 6,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Brian Spencer",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 28,
+                "position": "Defence",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Chris Elliott",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 77,
+                "position": "Winger",
+                "goals": 1,
+                "assists": 2,
+                "penaltyMinutes": 2
+            }
+        ]
+    },
+    {
+        "name": "Ian Bradley",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 17,
+                "position": "Winger",
+                "goals": 6,
+                "assists": 1,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Jack Crozier",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 86,
+                "position": "Winger",
+                "goals": 0,
+                "assists": 2,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Lee O'hara",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 11,
+                "position": "Defence",
+                "goals": 1,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Liam RenWick",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 92,
+                "position": "Centre",
+                "goals": 0,
+                "assists": 1,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Mark CartWright",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 80,
+                "position": "Defence",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Nathan Milne",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 21,
+                "position": "Center",
+                "goals": 5,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Peter Dyers",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 9902,
+                "position": "Winger",
+                "goals": 2,
+                "assists": 1,
+                "penaltyMinutes": 2
+            }
+        ]
+    },
+    {
+        "name": "Ron Ahmed",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 33,
+                "position": "Defence",
+                "goals": 0,
+                "assists": 2,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Scott Brown",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 5,
+                "position": "Center",
+                "goals": 2,
+                "assists": 2,
+                "penaltyMinutes": 2
+            }
+        ]
+    },
+    {
+        "name": "Steven Concannon",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 85,
+                "position": "Defence",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Tanya Royce",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 14,
+                "position": "Center",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Dan Blackman",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 25,
+                "position": "Winger",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Elliot Albert",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 16,
+                "position": "Winger",
+                "goals": 1,
+                "assists": 1,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Grant Taylor",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 69,
+                "position": "Winger",
+                "goals": 1,
+                "assists": 1,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "James Martin",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 79,
+                "position": "Defence",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Steven Hankinson",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 1,
+                "position": "Goalie",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Chris Wilson",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 26,
+                "position": "Defence",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Craig Johnston",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 9905,
+                "position": "Defence",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "James Batchelor-Bowman",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 9903,
+                "position": "Defence",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    },
+    {
+        "name": "Ryan Roxby",
+        "team": "Whitley Bay Sharks",
+        "seasons": [
+            {
+                "season": "2025/26",
+                "number": 9904,
+                "position": "Winger",
+                "goals": 0,
+                "assists": 0,
+                "penaltyMinutes": 0
+            }
+        ]
+    }
+]

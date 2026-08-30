@@ -292,13 +292,10 @@ function recordNewDataInteractive(rl, onComplete) {
     console.log("1. Add Player");
     console.log("2. Add Game Sheet");
     console.log("3. Edit Player");
-    console.log("4. Edit Game Sheet");
-    console.log("5. Remove Player");
-    console.log("6. Remove Game Sheet");
-    console.log("7. Main Menu");
+    console.log("4. Main Menu");
     console.log("=========================");
 
-    rl.question("Select an option (1-7): ", (choice) => {
+    rl.question("Select an option (1-4): ", (choice) => {
 
         switch (choice) {
 
@@ -331,24 +328,6 @@ function recordNewDataInteractive(rl, onComplete) {
                 break;
 
             case "4":
-                console.log("You selected: Edit Game Sheet");
-                console.log("Feature not available yet.");
-                onComplete();
-                break;
-
-            case "5":
-                console.log("You selected: Remove Player");
-                console.log("Feature not available yet.");
-                onComplete();
-                break;
-
-            case "6":
-                console.log("You selected: Remove Game Sheet");
-                console.log("Feature not available yet.");
-                onComplete();
-                break;
-
-            case "7":
                 onComplete();
                 break;
 

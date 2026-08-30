@@ -24,7 +24,7 @@ function saveGames() {
             JSON.stringify(games, null, 4)
         );
     } catch (error) {
-        console.log("could not save games:", err.message);
+        console.log("could not save games:", error.message);
     }
 }
 
