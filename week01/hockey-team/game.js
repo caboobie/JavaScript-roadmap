@@ -1,5 +1,6 @@
 const { findPlayerByNumber } = require('./roster');
 const { addGame } = require('./games');
+const players = require('./players');
 const { CURRENT_SEASON } = require('./config');
 const { printDivider, printDividerShort } = require('./display');
 
@@ -45,6 +46,8 @@ function recordGame(
             );
         }
     }
+    players.savePlayers(roster);
+    
 }
 
 function createGame(

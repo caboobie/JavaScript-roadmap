@@ -34,7 +34,7 @@
                 "penaltyMinutes": 0
             },
             {
-                "number": 9916,
+                "number": 9902,
                 "goals": 1,
                 "assists": 0,
                 "penaltyMinutes": 2
@@ -184,7 +184,7 @@
                 "penaltyMinutes": 0
             },
             {
-                "number": 9916,
+                "number": 9902,
                 "goals": 0,
                 "assists": 0,
                 "penaltyMinutes": 2
@@ -298,5 +298,67 @@
                 "penaltyMinutes": 0
             }
         ]
+    },
+    {
+        "season": "2025/26",
+        "opponent": "Leeds Raptors",
+        "location": "Away",
+        "date": "11-11-2025",
+        "venue": "Planet Ice Leeds",
+        "ourScore": 5,
+        "opponentScore": 2,
+        "result": "Win",
+        "playerStats": []
+    },
+    {
+        "season": "2025/26",
+        "opponent": "Billingham Blackhawks",
+        "location": "Home",
+        "date": "12-11-2025",
+        "venue": "Whitley Bay Ice Rink",
+        "ourScore": 2,
+        "opponentScore": 5,
+        "result": "Loss",
+        "playerStats": []
+    },
+    {
+        "season": "2025/26",
+        "opponent": "Coventry Coyotes",
+        "location": "Home",
+        "date": "13-11-2025",
+        "venue": "Whitley Bay Ice Rink",
+        "ourScore": 3,
+        "opponentScore": 3,
+        "result": "Draw",
+        "playerStats": []
+    },
+    {
+        "season": "2025/26",
+        "opponent": "Leeds Raptors",
+        "location": "Away",
+        "date": "14-11-2025",
+        "venue": "Planet Ice Leeds",
+        "ourScore": 3,
+        "opponentScore": 1,
+        "result": "Win",
+        "playerStats": [
+            {
+                "number": 90,
+                "goals": 2,
+                "assists": 1,
+                "penaltyMinutes": 4
+            }
+        ]
+    },
+    {
+        "season": "2025/26",
+        "opponent": "Telford Spartans",
+        "location": "Home",
+        "date": "15-11-2025",
+        "venue": "Whitley Bay Ice Rink",
+        "ourScore": 4,
+        "opponentScore": 2,
+        "result": "Win",
+        "playerStats": []
     }
 ]

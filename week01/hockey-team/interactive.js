@@ -31,7 +31,9 @@ function startInteractive() {
             case '1':
                 console.log(" You selected: View Roster");
                 // Call the function to view the roster here
-                roster.forEach(displayPlayerCardShort);
+                [...roster]
+                .sort((a, b) => a.seasons[0].number - b.seasons[0].number) // Sort by player number
+                .forEach(displayPlayerCardShort);
 
                 startInteractive(); // Show the menu again after displaying the roster
                 break;
